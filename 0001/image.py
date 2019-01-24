@@ -31,5 +31,6 @@ print('Original image size: %sx%s' % (w, h))
 draw = ImageDraw.Draw(im)
 draw.text((w / 2, 0), rndChar(), font=font, fill=rndColor2())
 # 缩放到50%:
+# im.thumbnail((w//2, h//2))
 # 把缩放后的图像用jpeg格式保存:
 im.save('new.jpg', 'jpeg')
