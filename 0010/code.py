@@ -8,15 +8,21 @@
 """
 
 import random
+import string
 
 from PIL import Image, ImageDraw, ImageFont
 
 
 # 随机输出四个字母:
 def rndChar():
-    str = ''
-    for i in range(4):
-        str += chr(random.randint(65, 90))
+    # 第一种写法
+    # str = ''
+    # for i in range(4):
+    #     # str += chr(random.randint(65, 90))
+    #     str += random.choice(string.letters)
+
+    # 第二种写法
+    str = ''.join([random.choice(string.ascii_letters + string.digits) for i in range(4)])
     return str
 
 
