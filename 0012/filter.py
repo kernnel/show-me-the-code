@@ -13,11 +13,9 @@ import re
 def filter_word(word):
     txt = open("./filtered_words.txt", 'r').read()
 
-    if len(re.findall(r'%s' % (word), txt)) == 0:
-        print('Human Rights')  # 非敏感词时，则打印出 Human Rights !
-    else:
-        print('Freedom')  # 输入敏感词语打印出 Freedom !
+    w = re.sub('|'.join(txt), "*", word)
+    print(w)
 
 
-word = "北京是个好城市"
+word = "北京是个好城市,公务员比程序员还牛逼"
 filter_word(word)
